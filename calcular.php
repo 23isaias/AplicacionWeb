@@ -3,6 +3,8 @@ $cantidad = $_POST['cantidad'];
 $subtotal = $cantidad*125;
 $numero_cajas = ceil($cantidad/4);
 $flete = $numero_cajas*50;
+$edad = 24;
+
 if ($cantidad>1000)
     $descuento=$subtotal*0.15;
 else
@@ -13,6 +15,20 @@ else
         $descuento=0;
 }
 $total=$subtotal+$flete-$descuento;
+
+switch($edad)
+{
+    case 12:
+        echo "La mitad de tu edad";
+        break;
+    case 24:
+        echo "Esta es tu edad";
+        break;
+    case 48:
+        echo "El doble de tu edad";
+        break;
+}
+
 echo "El precio total a pagar es: ".$total."<br>";
 echo "El monto por flete es: ".$flete."<br>";
 echo "El descuento aplicado fue: ".$descuento;
